@@ -23,9 +23,9 @@
 ###1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
 My pipeline consists of the following steps:
-![alt text][Original]
+
 * Convert the given image to grayscale
-![alt text][Gray]
+![alt text][Original] -> ![alt text][Gray] 
 * Apply gaussian blur on grayed image to suppress noise and smooth out gradients by averaging
 ![alt text][BlurGray]
 * Run canny edge detection on image from previous step to find the strong edges
@@ -41,8 +41,8 @@ which lanes lines are expected to be
 ##Modifications done to draw_lines:
 
 I modified the draw lines function to filter out the left and right lane lines based on their slope. The right lane line will have positive slope, and the left lane line will have negative slope. Then I found:
- *the highest and rightmost point (X1,Y1), and the lowest and leftmost point (X2,Y2) for the left lane line
- *the highest and leftmost point (X1,Y1), and the lowest and rightmost point (X2,Y2) for the right lane line
+ * the highest and rightmost point (X1,Y1), and the lowest and leftmost point (X2,Y2) for the left lane line
+ * the highest and leftmost point (X1,Y1), and the lowest and rightmost point (X2,Y2) for the right lane line
  
 Then using the slope of the lane lines, I extrapolated them to the bottom of the image. I also increased thickness of the line to make it more visually appealing.
 
