@@ -38,10 +38,12 @@ which lanes lines are expected to be
 * Finally we superimpose our lines onto the original image. 
 ![alt text][Final]
 
-Modifications done to draw_lines:
+##Modifications done to draw_lines:
+
 I modified the draw lines function to filter out the left and right lane lines based on their slope. The right lane line will have positive slope, and the left lane line will have negative slope. Then I found:
  *the highest and rightmost point (X1,Y1), and the lowest and leftmost point (X2,Y2) for the left lane line
  *the highest and leftmost point (X1,Y1), and the lowest and rightmost point (X2,Y2) for the right lane line
+ 
 Then using the slope of the lane lines, I extrapolated them to the bottom of the image. I also increased thickness of the line to make it more visually appealing.
 
 
